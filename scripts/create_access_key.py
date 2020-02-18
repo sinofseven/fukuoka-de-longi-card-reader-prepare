@@ -5,8 +5,7 @@ import boto3
 from botocore.client import BaseClient
 from prompt_toolkit.shortcuts import confirm
 
-SAM_DEPLOY_USER = "sam-deploy-user"
-SSM_DEPLOY_USER = "ssm-deploy-user"
+SAM_DEPLOY_USER = "fukuoka-de-longi-sam-deploy-user"
 
 
 def main():
@@ -26,10 +25,7 @@ def main():
 
 
 def get_username() -> str:
-    args = sys.argv
-    if len(args) < 2:
-        return SAM_DEPLOY_USER
-    return SSM_DEPLOY_USER if args[1] == "SSM" else SAM_DEPLOY_USER
+    return SAM_DEPLOY_USER
 
 
 def get_access_key_names(username: str, iam: BaseClient) -> List[str]:

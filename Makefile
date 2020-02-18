@@ -1,6 +1,6 @@
 SHELL = /usr/bin/env bash -xeuo pipefail
 
-stack_name:=lambda-runtime-tweeter-prepare
+stack_name:=fukuoka-de-longi-card-reader-prepare
 
 
 deploy:
@@ -16,10 +16,6 @@ deploy:
 create-sam-deploy-user-access-key:
 	poetry run python scripts/create_access_key.py SAM
 
-create-ssm-deploy-user-access-key:
-	poetry run python scripts/create_access_key.py SSM
-
 .PHONY: \
 	deploy \
-	create-sam-deploy-user-access-key \
-	create-ssm-deploy-user-access-key
+	create-sam-deploy-user-access-key

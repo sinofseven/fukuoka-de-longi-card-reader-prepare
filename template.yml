@@ -6,7 +6,7 @@ Resources:
   SAMDeployUser:
     Type: AWS::IAM::User
     Properties:
-      UserName: sam-deploy-user
+      UserName: fukuoka-de-longi-sam-deploy-user
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonS3FullAccess
       Policies:
@@ -18,23 +18,6 @@ Resources:
                 Action:
                   - cloudformation:*
                   - iam:PassRole
-                Resource:
-                  - "*"
-
-  SSMDeployUser:
-    Type: AWS::IAM::User
-    Properties:
-      UserName: ssm-deploy-user
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/AmazonSSMFullAccess
-      Policies:
-        - PolicyName: KMSAdminPolicy
-          PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-              - Effect: Allow
-                Action:
-                  - kms:*
                 Resource:
                   - "*"
 
